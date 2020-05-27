@@ -1,0 +1,12 @@
+controller\UserController.class
+service\BookService.class
+service\UserService.class
+dao\UserDao.class
+filter\MyRequest.class
+pojo\User.class
+dao\BookDao.class
+controller\BookController.class
+filter\GenericEncodingFilter.class
+pojo\Book.class
+service\BookServiceImpl.class
+service\UserServiceImpl.class
