@@ -27,9 +27,28 @@
         select * from javademo.books where bookID = #{bookID}
     </select>
 
+    <!--//根据name查询Book-->
+    <select id="queryBookByName" resultType="Book">
+        select * from javademo.books where bookName = #{bookName}
+    </select>
+
     <!--//查看全部的Book-->
     <select id="queryAllBook" resultType="Book">
         select * from javademo.books
     </select>
+
+    <sql id="Base_Column_List">
+		bookID , bookName, bookCounts, detail
+	</sql>
+
+    <!--根据主键查询一条用户数据 -->
+    <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+            parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from tb_user
+        where bookId = #{bookId}
+    </select>-->
+
 
 </mapper>

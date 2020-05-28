@@ -24,6 +24,8 @@
     <div class="row">
         <div class="col-md-4 column">
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
+            <a class="btn btn-success" href="${pageContext.request.contextPath}/book/toFindBook">书名查询查询</a>
+            <a class="btn btn-info" href="${pageContext.request.contextPath}/book/allBook">全部查询</a>
         </div>
     </div>
 

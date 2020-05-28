@@ -19,6 +19,8 @@ public interface BookService {
     //根据id查询Book
     Book queryBookByID(@Param("bookID") int id);
 
+    List<Book> queryBookByName(String bookName);
+
     //查看全部的Book
     List<Book> queryAllBook();
 

@@ -1,11 +1,16 @@
 package controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Property;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import pojo.Book;
 import service.BookService;
 
@@ -27,13 +32,39 @@ public class BookController {
         return "allBook";
     }
 
-    // 跳转到新增书籍页面
+    /*用id查书*//*
+    @RequestMapping("/findById")
+    public String findBookId(int bookID, Model model){
+        Book findBook = bookService.queryBookByID(bookID);
+        model.addAttribute("find",findBook);
+        return  "allBook";
+    }
+
+    *//*跳转到用号查书的页面*//*
+    @RequestMapping("/toFindBook")
+    public String toFindById(){
+        return "findBook";
+    }
+*/
+    @RequestMapping("/ByName")
+    public String queryBookByName(String bookName,Model model){
+        List<Book> list = bookService.queryBookByName(bookName);
+        model.addAttribute("list",list);
+        return "allBook";
+    }
+
+    @RequestMapping("/toFindBook")
+    public String toFindByName(){
+        return "findBook";
+    }
+    // 跳转到新增书籍页面/
     @RequestMapping("/toAddBook")
     public String toAddBookPage(){
         return "addBook";
     }
 
     // 增加书籍
+
     @RequestMapping("/addBook")
     public String addBook(Book book){
         bookService.addBook(book);

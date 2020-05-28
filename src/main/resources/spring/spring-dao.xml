@@ -27,7 +27,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
-        <!--关联mybatis-->
+
         <property name="typeAliasesPackage" value="pojo"/>
 
     </bean>
